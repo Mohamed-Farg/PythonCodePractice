@@ -693,19 +693,59 @@
 #     print('value', most_value , 'repeated' ,freq)
 
 
-def most_freq_fast(lst):
+# def most_freq_fast(lst):
     
-    freq_lst = [0] * (max(lst) + 1)
+#     freq_lst = [0] * (max(lst) + 1)
 
-    for value in lst:
-        freq_lst[value] += 1
+#     for value in lst:
+#         freq_lst[value] += 1
 
-    most_value = freq_lst.index(max(freq_lst))
+#     most_value = freq_lst.index(max(freq_lst))
 
-    return most_value , freq_lst[most_value]
+#     return most_value , freq_lst[most_value]
     
+# if __name__ == '__main__':
+#     lst = list(map(int,input().split()))
+#     most_value , freq = most_freq_fast(lst)
+
+#     print('value', most_value , 'repeated' ,freq)
+
+
+
+# 10 Homeword 1 - 7 Easy to Medium Challenges
+
+# Homework 1
+
+# Homework 1: Is increasing array?
+
+# def increacing_arr(lst):
+#     for idx in range(1,len(lst)):
+#         if lst[idx] < lst[idx - 1]:
+#             return False
+#     return True
+
+# if __name__ == '__main__':
+#     lst = list(map(int,input().split()))
+
+#     if increacing_arr(lst):
+#         print("YES")
+#     else:
+#         print("NO")
+
+# Homework 2: Replace MinMax
+
+def replace_min_max_inplace(lst):
+    mn = min(lst)
+    mx = max(lst)
+
+    for item in range(len(lst)):
+        if lst[item] == mn:
+            lst[item] = mx
+        elif lst[item] == mx:
+            lst[item] = mn
+
 if __name__ == '__main__':
     lst = list(map(int,input().split()))
-    most_value , freq = most_freq_fast(lst)
 
-    print('value', most_value , 'repeated' ,freq)
+    replace_min_max_inplace(lst)
+    print(lst)
